@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Concern</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Base + Submit CSS -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/submit.css">
+</head>
+
+<body class="submit-page">
+
+<div class="form-container">
+
+    <form action="process.php" method="POST">
+
+        <!-- Category -->
+        <div class="form-group">
+            <label for="category">What area is concerning you?</label>
+            <select name="category" id="category" required>
+                <option value="">Select</option>
+                <option value="harassment">Harassment</option>
+                <option value="workload">Workload</option>
+                <option value="management">Management</option>
+                <option value="discrimination">Discrimination</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+            <label for="description">Describe how it is affecting you?</label>
+            <textarea 
+                name="description" 
+                id="description" 
+                rows="4" 
+                required></textarea>
+        </div>
+
+        <!-- Suggestion -->
+        <div class="form-group">
+            <label for="suggestion">
+                Provide a
