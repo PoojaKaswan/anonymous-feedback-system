@@ -63,8 +63,9 @@ textarea {
 }
 
 /* Submit button aligned left */
+/* Submit button aligned to right */
 button {
-    align-self: flex-start;  
+    align-self: flex-end;   /* right side */
     padding: 14px 32px;
     border-radius: 30px;
     border: none;
@@ -80,6 +81,7 @@ button:hover {
     transform: translateY(-2px);
     box-shadow: 0 14px 28px rgba(37, 99, 235, 0.45);
 }
+
 
 /* Responsive for smaller screens */
 @media (max-width: 600px) {
