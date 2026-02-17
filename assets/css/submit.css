@@ -1,9 +1,9 @@
+/* ---------------- Body & Background ---------------- */
 body.submit-page {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;  /* allow form to start from top */
+    justify-content: center;   /* horizontal center */
+    align-items: center;       /* vertical center */
     min-height: 100vh;
-    padding-top: 60px;
     background-image: url("../../daisy-bg-image.png");
     background-size: cover;
     background-position: center;
@@ -11,30 +11,32 @@ body.submit-page {
     color: #111827;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     overflow-x: hidden;
+    position: relative;
 }
 
-/* Soft overlay (subtle, not full blur) */
+/* Soft overlay (subtle, no full blur) */
 body.submit-page::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.1); /* subtle light overlay */
     pointer-events: none;
 }
 
-/* Form container */
+/* ---------------- Form Container ---------------- */
 .form-container {
     text-align: left;  
     width: 100%;
-    max-width: 720px;  /* wider form */
-    padding: 0 20px;   
+    max-width: 720px;           /* wide form */
+    padding: 0 20px;
+    transform: translateY(-40px); /* slightly above center */
 }
 
-/* Form layout */
+/* ---------------- Form Layout ---------------- */
 form {
     display: flex;
     flex-direction: column;
-    gap: 24px;  /* spacing between questions */
+    gap: 24px; /* spacing between questions */
 }
 
 /* Labels above inputs */
@@ -44,10 +46,10 @@ label {
     margin-bottom: 8px;
 }
 
-/* Inputs and textareas */
+/* ---------------- Inputs & Textareas ---------------- */
 select,
 textarea {
-    width: 100%;           /* full width */
+    width: 100%;                /* full width */
     padding: 16px;
     border-radius: 16px;
     border: none;
@@ -55,17 +57,26 @@ textarea {
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     resize: none;
+    transition: all 0.2s ease;
 }
 
-/* Keep textarea normal height, not tall */
+/* Add subtle hover/focus effect for inputs */
+select:hover,
+textarea:hover,
+select:focus,
+textarea:focus {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Textarea normal height */
 textarea {
-    min-height: 120px;  /* not too tall */
+    min-height: 120px;
 }
 
-/* Submit button aligned left */
-/* Submit button aligned to right */
+/* ---------------- Submit Button ---------------- */
 button {
-    align-self: flex-end;   /* right side */
+    align-self: flex-end;       /* right side */
     padding: 14px 32px;
     border-radius: 30px;
     border: none;
@@ -82,19 +93,21 @@ button:hover {
     box-shadow: 0 14px 28px rgba(37, 99, 235, 0.45);
 }
 
-
-/* Responsive for smaller screens */
+/* ---------------- Responsive ---------------- */
 @media (max-width: 600px) {
     .form-container {
         padding: 0 15px;
+        transform: translateY(-20px); /* slightly above center for mobile */
     }
 
-    select, textarea {
+    select,
+    textarea {
         padding: 14px;
         font-size: 14px;
     }
 
     button {
         padding: 12px 24px;
+        align-self: stretch; /* full width button on mobile */
     }
 }
